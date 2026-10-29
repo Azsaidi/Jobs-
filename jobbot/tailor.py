@@ -79,9 +79,10 @@ def keyword_tailor(profile: Profile, job: Job, keywords: list[str], cover_letter
     def relevance(text: str) -> int:
         return sum(ats.count_term(k, text) for k in keywords)
 
+    ad = f"{job.title}\n{job.description}"
     skills = {}
     for cat, items in profile.skills.items():
-        skills[cat] = sorted(items, key=lambda s: -relevance(s))
+        skills[cat] = sorted(items, key=lambda s: -ats.count_term(s, ad))
     roles = []
     for i, exp in enumerate(profile.experience):
         bullets = sorted(exp.bullets, key=lambda b: -relevance(b))

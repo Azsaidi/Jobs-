@@ -157,7 +157,7 @@ def profile_context(profile: Profile) -> str:
         "skills": profile.skills,
         "experience": [
             {"id": f"e{i}", "title": e.title, "company": e.company, "location": e.location,
-             "start": e.start, "end": e.end,
+             "start": e.start, "end": e.end, **({"type": "academic (degree research/project)"} if e.academic else {}),
              "bullets": [{"id": f"e{i}b{j}", "text": b} for j, b in enumerate(e.bullets)]}
             for i, e in enumerate(profile.experience)
         ],

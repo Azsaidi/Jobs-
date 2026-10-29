@@ -25,6 +25,7 @@ class Experience:
     end: str = "Present"
     location: str = ""
     bullets: list[str] = field(default_factory=list)
+    academic: bool = False  # degree research/projects: shown on the CV, not counted as years of work experience
 
 
 @dataclass
@@ -61,7 +62,7 @@ class Profile:
             experience.append(Experience(
                 company=str(exp["company"]), title=str(exp["title"]), start=str(exp["start"]),
                 end=str(exp.get("end") or "Present"), location=str(exp.get("location") or ""),
-                bullets=[str(b) for b in exp.get("bullets") or []],
+                bullets=[str(b) for b in exp.get("bullets") or []], academic=bool(exp.get("academic")),
             ))
         if not experience:
             raise ProfileError("at least one experience entry is required")
@@ -114,9 +115,14 @@ class Profile:
         return "\n".join(p for p in parts if p)
 
     def years_of_experience(self, today: date | None = None) -> int:
+        """Years of work experience (academic entries excluded); `personal.years_experience` overrides."""
+        if str(self.personal.get("years_experience", "")).strip().isdigit():
+            return int(self.personal["years_experience"])
         today = today or date.today()
         spans = []
         for exp in self.experience:
+            if exp.academic:
+                continue
             start = parse_month(exp.start)
             end = today if exp.end.strip().lower() in ("present", "current", "now", "") else parse_month(exp.end)
             if start and end and end >= start:

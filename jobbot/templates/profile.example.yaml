@@ -30,6 +30,8 @@ skills:
 
 languages: [English (Native), Arabic (Basic)]
 
+# Add `academic: true` to degree research or university projects: they appear on the CV
+# but don't count toward your years of work experience.
 experience:
   - company: Example Retail Group
     title: Senior Data Analyst

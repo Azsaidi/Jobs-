@@ -64,3 +64,22 @@ def test_score_job_rewards_fit_and_flags_arabic(profile, job):
     unrelated = score_job(make_job(title="Chef de Partie", description="Cook food in a busy kitchen."),
                           profile, SEARCH)
     assert unrelated.keyword_score < 30
+
+
+def test_academic_entries_do_not_count_as_work_years(profile):
+    from datetime import date
+
+    from jobbot.profile import Experience
+
+    profile.experience = [Experience("Uni", "MSc Research", "2020", "Present", academic=True),
+                          Experience("Hub", "Intern", "May 2024", "Aug 2024")]
+    assert profile.years_of_experience(date(2026, 10, 1)) == 0
+    profile.personal["years_experience"] = "2"
+    assert profile.years_of_experience() == 2
+
+
+def test_engineering_terms_are_recognised():
+    from jobbot import ats
+
+    kws = ats.extract_keywords("Composites engineer: CATIA, GD&T, FEA with Abaqus, AS9100 quality system.")
+    assert {"CATIA", "GD&T", "FEA", "Abaqus", "AS9100"} <= set(kws)

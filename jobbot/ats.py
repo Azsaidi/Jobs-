@@ -37,6 +37,17 @@ Supply Chain; Logistics; Procurement; Inventory Management; Warehouse Management
 Operations Management; Facilities Management; Health and Safety; HSE; NEBOSH; ISO 9001; Quality Assurance;
 Quality Control; AutoCAD; Revit; BIM; Primavera; MS Project; Civil Engineering; MEP; Construction Management;
 Contract Management; FIDIC; Estimation; Quantity Surveying;
+Mechanical Engineering; Aerospace Engineering; Mechanical Design; Manufacturing Engineering; Process Engineering;
+Materials Engineering; Quality Engineering; Systems Engineering; Requirements Management; Design for Manufacture;
+DFM; DFMA; CAD; CAE; CATIA; Siemens NX; SolidWorks; Fusion 360; Creo; Inventor; Technical Drawings; GD&T; Tolerancing;
+FEA; Finite Element Analysis; Stress Analysis; Structural Analysis; Thermal Analysis; Modal Analysis; Fatigue;
+ANSYS; Abaqus; Nastran; Patran; HyperMesh; COMSOL; MATLAB; Simulink; CFD; ANSYS Fluent; STAR-CCM+; OpenFOAM;
+Composites; Composite Materials; Carbon Fibre; Carbon Fiber; CFRP; Prepreg; Autoclave; Layup; Resin Infusion;
+Thermoplastics; Adhesive Bonding; Welding; NDT; NDI; Ultrasonic Testing; Metrology; Tooling; Fixture Design; Jigs;
+CNC; Machining; Additive Manufacturing; 3D Printing; Sheet Metal; Injection Moulding; Prototyping;
+Aerodynamics; Avionics; Propulsion; Aerostructures; Airframe; UAV; Drones; Satellite; Spacecraft; Flight Testing;
+MRO; Airworthiness; EASA; GCAA; FAA; Part 145; Part 21; AS9100; AS9102; FAI; FMEA; DFMEA; PFMEA; Root Cause Analysis;
+8D; SPC; PPAP; APQP; Continuous Improvement; Kaizen; 5S; PLM; Teamcenter; Windchill;
 Nursing; DHA; DOH; MOH; Patient Care; Clinical; Pharmacy; BLS; ACLS;
 Teaching; Curriculum Development; KHDA; IB; IGCSE;
 Hospitality; F&B; Front Office; Revenue Management; Event Management;
