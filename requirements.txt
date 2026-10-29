@@ -1,0 +1,11 @@
+anthropic>=2.3
+beautifulsoup4>=4.12
+pydantic>=2.6
+python-docx>=1.1
+PyYAML>=6.0
+reportlab>=4.0
+requests>=2.31
+# Optional: browser form-filling (then run `playwright install chromium`)
+playwright>=1.45
+# Optional: `jobbot import-cv` from a PDF
+pdfplumber>=0.11

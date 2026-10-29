@@ -1,0 +1,105 @@
+# Your master CV. Every tailored CV is built ONLY from what is written here, so put
+# everything in: all roles, all real achievements with numbers, every skill and tool.
+# Tailoring selects, re-orders and re-words; it never adds facts. Tip: `jobbot import-cv cv.pdf`
+# drafts this file from your current CV.
+
+personal:
+  name: Alex Example
+  email: alex.example@example.com
+  phone: "+971 50 123 4567"
+  location: Dubai, UAE
+  linkedin: linkedin.com/in/alex-example
+  website: ""
+  # UAE-specific details (shown on the CV when tailoring.show_personal_details is true)
+  nationality: British
+  visa_status: UAE residence visa (transferable)
+  notice_period: 1 month
+  driving_license: UAE
+
+headline: Senior Data Analyst | SQL, Python & Power BI
+
+summary: >-
+  Data analyst with 7 years of experience turning operational and financial data into decisions
+  for retail and fintech businesses in the UAE. Builds reliable data models, self-service dashboards
+  and forecasting tools, and works closely with commercial and finance stakeholders.
+
+skills:
+  Analytics: [SQL, Python, Power BI, Tableau, Excel, Statistics, A/B Testing, Forecasting, Data Modeling]
+  Data Engineering: [dbt, Airflow, Snowflake, BigQuery, ETL]
+  Business: [Stakeholder Management, Financial Analysis, Requirements Gathering, Agile]
+
+languages: [English (Native), Arabic (Basic)]
+
+experience:
+  - company: Example Retail Group
+    title: Senior Data Analyst
+    location: Dubai, UAE
+    start: Mar 2021
+    end: Present
+    bullets:
+      - Built a Power BI sales dashboard suite used by 120 store and category managers, replacing 30 manual Excel reports
+      - Designed dbt data models in Snowflake for sales, inventory and loyalty data, cutting report refresh time from 6 hours to 40 minutes
+      - Developed a Python demand-forecasting model that reduced stock-outs by 18% across 45 stores
+      - Ran A/B tests on loyalty-app promotions with the marketing team, lifting redemption rate by 9%
+      - Partnered with finance on monthly P&L variance analysis and board reporting
+  - company: Example Payments FZ-LLC
+    title: Data Analyst
+    location: Abu Dhabi, UAE
+    start: Jan 2018
+    end: Feb 2021
+    bullets:
+      - Wrote SQL pipelines and Tableau dashboards to monitor transaction volumes and fraud KPIs
+      - Automated weekly regulatory reporting with Python and Airflow, saving 2 analyst days per week
+      - Analysed merchant churn and built a risk score adopted by the account management team
+
+education:
+  - degree: BSc
+    field: Economics
+    institution: University of Example
+    location: London, UK
+    year: "2017"
+
+certifications:
+  - name: Microsoft Certified Power BI Data Analyst Associate
+    issuer: Microsoft
+    year: "2022"
+
+projects: []
+
+# Answers for application-form screening questions. `match` is a regex tested against the
+# question text (case-insensitive); the first match wins. Questions with no answer here stop
+# auto-submission, and the form is left for you.
+application_answers:
+  - match: "notice period"
+    answer: "1 month"
+  - match: "current (salary|compensation|package)"
+    answer: "Prefer to discuss"
+  - match: "salary|compensation|expected (pay|package|ctc)"
+    answer: "25000"                  # monthly AED; use "Negotiable" if you prefer
+  - match: "sponsor"                # before "visa": "Do you need visa sponsorship?"
+    answer: "No"
+  - match: "authori[sz]ed to work|right to work|eligib\\w* to work|work permit|legally"
+    answer: "Yes"
+  - match: "visa"
+    answer: "UAE residence visa (transferable)"
+  - match: "relocat"
+    answer: "Yes"
+  - match: "years of (relevant |professional )?experience"
+    answer: "7"
+  - match: "currently (based|located|residing) in (the )?uae|live in (the )?uae|uae resident"
+    answer: "Yes"
+  - match: "arabic"
+    answer: "Basic"
+  - match: "driving licen[cs]e"
+    answer: "Yes"
+  - match: "how did you hear|where did you (hear|find)"
+    answer: "Company careers page"
+  - match: "start date|when can you start|available to start"
+    answer: "1 month from offer"
+  - match: "employment status"
+    answer: "Employed"
+  - match: "level of education|highest (degree|qualification)"
+    answer: "Bachelor's Degree"
+  # Attestations ("I confirm the information provided is true") - only keep this if your profile is accurate.
+  - match: "confirm that the information|true and (complete|accurate|correct)"
+    answer: "Yes"

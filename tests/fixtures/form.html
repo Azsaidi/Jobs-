@@ -1,0 +1,24 @@
+<!doctype html>
+<html><body>
+<h1>Apply: Senior Data Analyst</h1>
+<form id="app" onsubmit="event.preventDefault(); document.body.innerHTML = '<h2>Thank you for applying!</h2>';">
+  <label for="fn">First Name *</label><input id="fn" name="first_name" required>
+  <label for="ln">Last Name *</label><input id="ln" name="last_name" required>
+  <label for="em">Email *</label><input id="em" type="email" name="email" required>
+  <label for="ph">Phone *</label><input id="ph" type="tel" name="phone" required>
+  <label for="li">LinkedIn Profile</label><input id="li" name="urls[LinkedIn]">
+  <label for="resume">Resume/CV *</label><input id="resume" type="file" name="resume" required>
+  <label for="np">What is your notice period? *</label><input id="np" name="q1" required>
+  <label for="visa">Do you require visa sponsorship? *</label>
+  <select id="visa" name="q2" required><option value="">Select...</option><option>Yes</option><option>No</option></select>
+  <fieldset><legend>Are you willing to relocate? *</legend>
+    <label><input type="radio" name="q3" value="yes" required> Yes</label>
+    <label><input type="radio" name="q3" value="no"> No</label>
+  </fieldset>
+  <label for="g">Gender</label>
+  <select id="g" name="gender"><option value="">Select...</option><option>Male</option><option>Female</option><option>Decline to self-identify</option></select>
+  <label><input type="checkbox" name="consent" required> I agree to the privacy policy *</label>
+  <!--EXTRA-->
+  <button type="submit">Submit application</button>
+</form>
+</body></html>

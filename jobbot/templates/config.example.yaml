@@ -1,0 +1,90 @@
+# jobbot configuration. Every key is optional; defaults are in jobbot/config.py.
+
+search:
+  # Job titles you want. Used for matching, and as search queries for the aggregator sources.
+  keywords:
+    - Data Analyst
+    - Business Intelligence Analyst
+    - Analytics Manager
+  title_include: []            # if set, a job title must contain one of these words
+  title_exclude: [intern, internship, junior, trainee]
+  # locations: [...]           # defaults to all seven emirates + "UAE"/"United Arab Emirates"
+  allow_remote: false          # also accept "Remote" roles that don't mention the UAE
+  max_age_days: 30
+  exclude_companies: []        # e.g. your current employer
+  skip_nationals_only: true    # skip Emiratisation (UAE-nationals-only) roles unless you're Emirati
+
+sources:
+  # Company career boards (free, no key). Values are the company's board name in the URL,
+  # e.g. job-boards.greenhouse.io/<board>, jobs.lever.co/<site>, jobs.ashbyhq.com/<org>.
+  # These defaults all had UAE openings when this was written - add companies you like.
+  greenhouse:
+    enabled: true
+    boards: [careem, tamara, bybit, binance, okx, mongodb, gitlab, elastic]
+  ashby:
+    enabled: true
+    orgs: [ziina, airwallex, snowflake]
+  lever:
+    enabled: false
+    sites: []
+  workable:
+    enabled: false
+    accounts: []
+  # Aggregators: the broadest UAE coverage. Need an API key in .env (both have free tiers).
+  jsearch:
+    enabled: false             # RAPIDAPI_KEY
+    pages: 1
+    date_posted: week          # all | today | 3days | week | month
+  serpapi:
+    enabled: false             # SERPAPI_KEY
+  rss:
+    enabled: false
+    feeds: []                  # [{url: https://..., company: Optional Name}]
+
+matching:
+  min_keyword_score: 35        # 0-100 cheap first filter (skills + title overlap)
+  use_llm: true                # Claude reads each remaining ad and scores your fit
+  min_llm_score: 65
+  max_llm_assessments_per_run: 40
+
+tailoring:
+  use_llm: true                # Claude rewrites the CV for each job (never adds facts - see README)
+  cover_letter: true
+  formats: [pdf, docx]
+  max_per_run: 15
+  show_personal_details: true  # nationality / visa / notice period line, customary on UAE CVs
+
+apply:
+  # review: prepare everything, notify you, you approve with `jobbot apply <id>`   <- recommended start
+  # auto:   submit automatically when the fit score >= min_score_to_auto_apply
+  # off:    only find and tailor
+  mode: review
+  channels: [email, browser]   # tried in this order; anything else is left for you with the files ready
+  daily_limit: 10
+  min_score_to_auto_apply: 80
+  browser:
+    headless: true
+    accept_privacy_consent: true   # tick required "I agree to the privacy policy" boxes
+    timeout_seconds: 45
+  email:
+    cc_self: true
+
+notify:
+  email:
+    enabled: true
+    to: ""                     # defaults to the email in your profile
+  telegram:
+    enabled: false
+  ntfy:
+    enabled: false
+    topic: ""                  # pick something unguessable, e.g. jobbot-<random>
+  notify_when_nothing_new: false
+
+llm:
+  model: claude-opus-5-5
+  effort: medium               # low | medium | high
+
+storage:
+  profile: profile.yaml
+  db_path: data/jobbot.db
+  output_dir: output
